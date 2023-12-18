@@ -115,7 +115,7 @@
         viewer.scene.camera.rotate(Cesium.Cartesian3.UNIT_Z, spinRate * delta);
       });
 
-      //Add Billboards for Made Media Works
+      //Billboard Logos for Made Media Projects
       const melbourneTheatreCompany = viewer.entities.add({
         position: Cesium.Cartesian3.fromDegrees(144.96, -37.82),
         billboard: {
@@ -144,6 +144,7 @@
       });
 
       function flyToRAH() {
+        console.log("Hit");
         var projectInfoPanelContainer = document.querySelectorAll('.project-information-panel-container');
         projectInfoPanelContainer[0].style.display = "none";
         projectInfoPanelContainer[1].style.display = "none";
@@ -155,6 +156,7 @@
       }
 
       function flyToNYCB() {
+        console.log("Hit");
         var projectInfoPanelContainer = document.querySelectorAll('.project-information-panel-container');
         projectInfoPanelContainer[0].style.display = "none";
         projectInfoPanelContainer[1].style.display = "unset";
@@ -166,6 +168,7 @@
       }
 
       function flyToMTC() {
+        console.log("Hit");
         var projectInfoPanelContainer = document.querySelectorAll('.project-information-panel-container');
         projectInfoPanelContainer[0].style.display = "unset";
         projectInfoPanelContainer[1].style.display = "none";
