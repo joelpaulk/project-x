@@ -1,5 +1,4 @@
 function hideProjectInformationPanel() {
-    console.log("Hello Scripts");
     var projectInfoPanel = document.querySelectorAll('.project-information-panel');
     projectInfoPanel[0].style.display = "none";
 

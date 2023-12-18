@@ -30,7 +30,7 @@ CONTENTS
     font-weight: 700;
     padding: 0px 20px 0 20px;
     background: #9e9880;
-    color: #232323;
+    color: #FFFFFF;
 }
 
 .button:hover {
@@ -56,7 +56,7 @@ CONTENTS
     z-index: 99;
     right: 0;
     width: 320px;
-    margin-top: 50px;
+    margin-top: 10%;
     margin-right: 50px;
     background: #ffffff;
     padding: 12px;
