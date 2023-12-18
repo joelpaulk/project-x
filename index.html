@@ -126,7 +126,7 @@
       });
 
       const newYorkCityBallet = viewer.entities.add({
-        position: Cesium.Cartesian3.fromDegrees(-73.98, 40.03),
+        position: Cesium.Cartesian3.fromDegrees(-73.98, 40.77),
         billboard: {
           image: "/project-x/assets/map-nycb.png",
           width: 80,
@@ -160,7 +160,7 @@
         projectInfoPanelContainer[1].style.display = "unset";
         projectInfoPanelContainer[2].style.display = "none";
         viewer.camera.flyTo({
-          destination: Cesium.Cartesian3.fromDegrees(-73.98, 40.03, 7000.0)
+          destination: Cesium.Cartesian3.fromDegrees(-73.98, 40.77, 7000.0)
         });
         return dynamicRate = 0.0;
       }
@@ -200,10 +200,11 @@
         var projectInfoPanel = document.querySelectorAll('.project-information-panel');
         projectInfoPanel[0].style.display = "unset";
         var projectInfoPanelContainer = document.querySelectorAll('.project-information-panel-container');
+        projectInfoPanelContainer[0].style.display = "none";
         projectInfoPanelContainer[1].style.display = "none";
         projectInfoPanelContainer[2].style.display = "unset";
         viewer.camera.flyTo({
-          destination: Cesium.Cartesian3.fromDegrees(20.50, 44.78, 7000000.0)
+          destination: Cesium.Cartesian3.fromDegrees(0.0, 44.78, 7000000.0)
         });
         return dynamicRate = 0.0;
       }
