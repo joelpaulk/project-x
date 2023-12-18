@@ -1,0 +1,21 @@
+{
+    "mademedia": {
+      "ourwork": [
+        {
+            "Name": "Melbourne Theatre Company",
+            "Longitude": "-37.82",
+            "Latitude": "144.96"
+        },
+        {
+            "Name": "New York City Ballet",
+            "Longitude": "40.77",
+            "Latitude": "-152.03"
+        },
+        {
+            "Name": "Royal Ablert Hall",
+            "Longitude": "51.50",
+            "Latitude": "-0.182"
+        }
+        ]
+    }
+}

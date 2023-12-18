@@ -25,7 +25,7 @@
     function startup(Cesium) {
       'use strict';
       var dynamicRate = 0.1;
-      
+
       //Set viewer options
       var viewer = new Cesium.Viewer('cesiumContainer', {
         contextOptions: {
@@ -71,6 +71,35 @@
         previousTime = currentTime;
         viewer.scene.camera.rotate(Cesium.Cartesian3.UNIT_Z, spinRate * delta);
       });
+
+      //Add Billboards for Made Media Works
+      const melbourneTheatreCompany = viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(-37.82, 144.96),
+        billboard: {
+          image: "/project-x/map-mtc.png",
+          width: 64,
+          height: 64,
+        }
+      });
+      
+      const newYorkCityBallet = viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(40.77, -152.03),
+        billboard: {
+          image: "/project-x/map-nycb.png",
+          width: 64,
+          height: 64,
+        }
+      });
+
+      const royalAlbertHall = viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(51.50, -0.182),
+        billboard: {
+          image: "/project-x/map-rah.png",
+          width: 64,
+          height: 64,
+        }
+      });
+
     }
 
     if (typeof Cesium !== 'undefined') {
