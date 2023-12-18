@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <!-- Include the CesiumJS JavaScript and CSS files -->
   <script src="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Cesium.js"></script>
-  <script src="script.js"></script>
   <link href="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
   <style>
@@ -16,9 +15,9 @@
 <body>
   <section class="work-by-region">
     <div class="work-by-region-container">
-      <button class="button button--left"> Around The World </button>
-      <button class="button"> North America </button>
-      <button class="button button--right"> United Kingdom </button>
+      <button class="button button--left btn-global"> Around The World </button>
+      <button class="button btn-america"> North America </button>
+      <button class="button button--right btn-uk"> United Kingdom </button>
     </div>
   </section>
   <section class="project-information-panel">
@@ -31,6 +30,28 @@
       <a class="button project-information-panel__site-link" href="https://www.mtc.com.au/plays-and-tickets/whats-on/mtc-digital-theatre/"> Visit Site </a>
       <a href="#"><img class="project-information-panel__switch switch-nycb" src="assets/map-nycb.png"></a>
       <a href="#"><img class="project-information-panel__switch switch-rah" src="assets/map-rah.png"></a>
+    </div>
+
+    <div class="project-information-panel-container">
+      <h3 class="project-information-panel__title">New York City Ballet</h3>
+      <h1 class="project-information-panel__title">Reimagining the principles of classical dance with a roster of spectacular dancers and an unparalleled repertory.</h1>
+      <h5 class="project-information-panel__tag">Digital Brand Development</h5><h5 class="project-information-panel__tag">CMS Development</h5><h5 class="project-information-panel__tag">Digital Strategy</h5>
+      <img class="project-information-panel__image" src="assets/nycb-cover.jpeg">
+      <div class="project-information-panel__desciption"><p>New York City Ballet is one of the foremost dance companies in the world. A firm fixture in the cultural life of New York City, NYCB reaches dance lovers all over the world through its digital channels. From its home at Lincoln Center, NYCB provides a breadth of programming for both dance aficionados and newcomers to the form, and its annual Nutcracker season is a highlight of the holidays in New York City.</p></div>
+      <a class="button project-information-panel__site-link" href="https://www.nycballet.com/"> Visit Site </a>
+      <a href="#"><img class="project-information-panel__switch switch-rah" src="assets/map-rah.png"></a>
+      <a href="#"><img class="project-information-panel__switch switch-mtc" src="assets/map-mtc.png"></a>
+    </div>
+
+    <div class="project-information-panel-container">
+      <h3 class="project-information-panel__title">Royal Albert Hall</h3>
+      <h1 class="project-information-panel__title">Restaurant Bookings</h1>
+      <h5 class="project-information-panel__tag">UX Design</h5><h5 class="project-information-panel__tag">Tessitura Integration</h5><h5 class="project-information-panel__tag">Angular JS</h5>
+      <img class="project-information-panel__image" src="assets/rah-cover.jpeg">
+      <div class="project-information-panel__desciption"><p>This project spanned UX design, front end development (html, css, Angular JS), and backend system integration with their Tessitura ticketing platform. <br> The Royal Albert Hall already offered restaurant bookings on their website for a few years but they felt it didn’t serve both their changing business along with the expectations of bookers as to what a restaurant booking system should offer.  They also saw some restaurants getting a higher portion of traffic and bookings over others. They felt this was due to the outdated UX rather than the organic popularity of the restaurant.</p></div>
+      <a class="button project-information-panel__site-link" href="https://www.royalalberthall.com/"> Visit Site </a>
+      <a href="#"><img class="project-information-panel__switch switch-mtc" src="assets/map-mtc.png"></a>
+      <a href="#"><img class="project-information-panel__switch switch-nycb" src="assets/map-nycb.png"></a>
     </div>
   </section>
   <section class="cesium-globe-cover">
@@ -123,22 +144,67 @@
       });
 
       function flyToRAH() {
-        console.log("Clicked RAH");
         viewer.camera.flyTo({
-          destination: Cesium.Cartesian3.fromDegrees(-0.182, 51.50, 7000000.0)
+          destination: Cesium.Cartesian3.fromDegrees(-0.182, 51.50, 7000.0)
+        });
+        return dynamicRate = 0.0;
+      }
+
+      function flyToNYCB() {
+        viewer.camera.flyTo({
+          destination: Cesium.Cartesian3.fromDegrees(-73.98, 40.03, 7000.0)
+        });
+        return dynamicRate = 0.0;
+      }
+
+      function flyToMTC() {
+        viewer.camera.flyTo({
+          destination: Cesium.Cartesian3.fromDegrees(144.96, -37.82, 7000.0)
+        });
+        return dynamicRate = 0.0;
+      }
+
+      function spinGlobal() {
+        viewer.camera.flyTo({
+          destination: Cesium.Cartesian3.fromDegrees(0.0, 0.0, 15000000.0)
+        });
+        return dynamicRate = 0.1;
+      }
+
+      function flyToAmerica() {
+        viewer.camera.flyTo({
+          destination: Cesium.Cartesian3.fromDegrees(-95.50, 35.78, 7000000.0)
+        });
+        return dynamicRate = 0.0;
+      }
+
+      function flyToUK() {
+        viewer.camera.flyTo({
+          destination: Cesium.Cartesian3.fromDegrees(20.50, 44.78, 7000000.0)
         });
         return dynamicRate = 0.0;
       }
 
       window.onload = function () {
+
+        hideProjectInformationPanel();
+
         var projectRAH = document.querySelectorAll('.switch-rah');
         var projectNYCB = document.querySelectorAll('.switch-nycb');
         var projectMTC = document.querySelectorAll('.switch-mtc');
-
-        console.log(projectRAH);
         projectRAH[0].onclick = flyToRAH;
-}
+        projectNYCB[0].onclick = flyToNYCB;
+        projectMTC[0].onclick = flyToMTC;
+      
 
+        var projectsGlobal = document.querySelectorAll('.btn-global');
+        var projectsAmerica = document.querySelectorAll('.btn-america');
+        var projectsUK = document.querySelectorAll('.btn-uk');
+        projectRAH[0].onclick = spinGlobal;
+        projectNYCB[0].onclick = flyToAmerica;
+        projectMTC[0].onclick = flyToUK;
+
+      }
     }
 
     if (typeof Cesium !== 'undefined') {
@@ -148,6 +214,6 @@
     }
   </script>
   </div>
+  <script type="text/javascript" src="script.js"></script>
 </body>
-
 </html>
