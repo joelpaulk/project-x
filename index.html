@@ -6,13 +6,21 @@
   <!-- Include the CesiumJS JavaScript and CSS files -->
   <script src="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Cesium.js"></script>
   <link href="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
-  <link href="/project-x/styles.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
   <style>
     @import url(https://sandcastle.cesium.com/templates/bucket.css);
   </style>
 </head>
 
 <body>
+  <section class="work-by-region">
+    <div class="work-by-region-container">
+      <button class="button button--left"> Around The World </button>
+      <button class="button"> North America </button>
+      <button class="button button--right"> United Kingdom </button>
+    </div>
+  </section>
+  <section></section>
   <div id="cesiumContainer" class="fullSize"></div>
   <script type="module">
     // Your access token can be found at: https://ion.cesium.com/tokens.
@@ -77,8 +85,6 @@
         position: Cesium.Cartesian3.fromDegrees(144.96, -37.82),
         billboard: {
           image: "/project-x/map-mtc.png",
-          width: 64,
-          height: 64,
         }
       });
 
@@ -86,8 +92,6 @@
         position: Cesium.Cartesian3.fromDegrees(-73.98, 40.03),
         billboard: {
           image: "/project-x/map-nycb.png",
-          width: 64,
-          height: 64,
         }
       });
 
@@ -95,8 +99,6 @@
         position: Cesium.Cartesian3.fromDegrees(-0.182, 51.50),
         billboard: {
           image: "/project-x/map-rah.png",
-          width: 64,
-          height: 64,
         }
       });
 

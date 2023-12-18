@@ -1,3 +1,62 @@
-.cesium-viewer .cesium-widget-credits{
-    display: none;
+/**
+CONTENTS
+-------------------------
+
+1. TYPOGRAPHY
+2. COLOR PALETTE
+
+**/
+
+/** 1. TYPOGRAPHY **/
+
+/* * {
+    font-family: monospace !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+} */
+
+/** Region Based Selector **/
+.work-by-region {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 50px;
+    z-index: 100;
+}
+
+.work-by-region-container {
+    text-align: center;
+}
+
+.button {
+    height: 50px;
+    width: auto;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0px 20px 0 20px;
+    background: #d6153c;
+    color: #232323;
+}
+
+.button:hover {
+    opacity: 0.75;
+}
+
+.button--left {
+    border-radius: 100px 0px 0px 100px;
+}
+
+.button--right {
+    border-radius: 0px 100px 100px 0px;
+}
+
+.button--active {
+    background: #ffffff;
+}
+
+
+.cesium-viewer-bottom {
+    display: none !important;
 }
