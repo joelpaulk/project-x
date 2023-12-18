@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <!-- Include the CesiumJS JavaScript and CSS files -->
   <script src="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Cesium.js"></script>
+  <script src="script.js"></script>
   <link href="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
   <style>
@@ -28,9 +29,13 @@
       <img class="project-information-panel__image" src="assets/mtc-cover.jpeg">
       <div class="project-information-panel__desciption"><p>The implementation included creating a new video page within MTC’s Silverstripe CMS which allows users to view details of the video and purchase the video online via the BlocksOffice purchase path. Users were able to purchase the video and watch it directly and immediately through the MTC website.  </p></div>
       <a class="button project-information-panel__site-link" href="https://www.mtc.com.au/plays-and-tickets/whats-on/mtc-digital-theatre/"> Visit Site </a>
+      <a href=""><img class="project-information-panel__switch switch-nycb" src="assets/map-nycb.png"></a>
+      <a href=""><img class="project-information-panel__switch switch-rah" src="assets/map-rah.png"></a>
     </div>
   </section>
-  <div id="cesiumContainer" class="fullSize"></div>
+  <section class="cesium-globe-cover">
+    <div id="cesiumContainer" class="fullSize"></div>
+  </section>
   <script type="module">
     // Your access token can be found at: https://ion.cesium.com/tokens.
     // This is the default access token from your ion account

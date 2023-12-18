@@ -29,7 +29,7 @@ CONTENTS
     font-size: 18px;
     font-weight: 700;
     padding: 0px 20px 0 20px;
-    background: #d6153c;
+    background: #9e9880;
     color: #232323;
 }
 
@@ -88,6 +88,7 @@ CONTENTS
 
 .project-information-panel__desciption {
     color: #232323;
+    font-size: 14px;
 }
 
 .project-information-panel__site-link {
@@ -96,8 +97,18 @@ CONTENTS
     padding: 14.5px;
     height: auto;
     text-decoration: none;
-    background: #9e9880;
     color: #ffffff;
+}
+
+.project-information-panel__switch {
+    width: 48%;
+    display: inline;
+}
+
+/** 3. CESIUM GLOBE STYLES **/
+
+.cesium-globe-cover {
+    background: radial-gradient(50% 50%, #1C3B5C 0%, #233049 150%, #232537 100%);
 }
 
 .cesium-viewer-bottom {
