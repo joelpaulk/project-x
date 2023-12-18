@@ -29,8 +29,8 @@
       <img class="project-information-panel__image" src="assets/mtc-cover.jpeg">
       <div class="project-information-panel__desciption"><p>The implementation included creating a new video page within MTC’s Silverstripe CMS which allows users to view details of the video and purchase the video online via the BlocksOffice purchase path. Users were able to purchase the video and watch it directly and immediately through the MTC website.  </p></div>
       <a class="button project-information-panel__site-link" href="https://www.mtc.com.au/plays-and-tickets/whats-on/mtc-digital-theatre/"> Visit Site </a>
-      <a href=""><img class="project-information-panel__switch switch-nycb" src="assets/map-nycb.png"></a>
-      <a href=""><img class="project-information-panel__switch switch-rah" src="assets/map-rah.png"></a>
+      <a href="#"><img class="project-information-panel__switch switch-nycb" src="assets/map-nycb.png"></a>
+      <a href="#"><img class="project-information-panel__switch switch-rah" src="assets/map-rah.png"></a>
     </div>
   </section>
   <section class="cesium-globe-cover">
@@ -121,6 +121,23 @@
           height: 64,
         }
       });
+
+      function flyToRAH() {
+        console.log("Clicked RAH");
+        viewer.camera.flyTo({
+          destination: Cesium.Cartesian3.fromDegrees(-0.182, 51.50, 7000000.0)
+        });
+        return dynamicRate = 0.0;
+      }
+
+      window.onload = function () {
+        var projectRAH = document.querySelectorAll('.switch-rah');
+        var projectNYCB = document.querySelectorAll('.switch-nycb');
+        var projectMTC = document.querySelectorAll('.switch-mtc');
+
+        console.log(projectRAH);
+        projectRAH[0].onclick = flyToRAH;
+}
 
     }
 
