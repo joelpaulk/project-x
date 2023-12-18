@@ -20,7 +20,16 @@
       <button class="button button--right"> United Kingdom </button>
     </div>
   </section>
-  <section></section>
+  <section class="project-information-panel">
+    <div class="project-information-panel-container">
+      <h3 class="project-information-panel__title">Melbourne Theatre Company</h3>
+      <h1 class="project-information-panel__title">Creating Melbourne Theatre Company's Digital Stage</h1>
+      <h5 class="project-information-panel__tag">UX Design</h5><h5 class="project-information-panel__tag">Tessitura Integration</h5><h5 class="project-information-panel__tag">Video Integration</h5>
+      <img class="project-information-panel__image" src="assets/mtc-cover.jpeg">
+      <div class="project-information-panel__desciption"><p>The implementation included creating a new video page within MTC’s Silverstripe CMS which allows users to view details of the video and purchase the video online via the BlocksOffice purchase path. Users were able to purchase the video and watch it directly and immediately through the MTC website.  </p></div>
+      <a class="button project-information-panel__site-link" href="https://www.mtc.com.au/plays-and-tickets/whats-on/mtc-digital-theatre/"> Visit Site </a>
+    </div>
+  </section>
   <div id="cesiumContainer" class="fullSize"></div>
   <script type="module">
     // Your access token can be found at: https://ion.cesium.com/tokens.
@@ -84,21 +93,27 @@
       const melbourneTheatreCompany = viewer.entities.add({
         position: Cesium.Cartesian3.fromDegrees(144.96, -37.82),
         billboard: {
-          image: "/project-x/map-mtc.png",
+          image: "/project-x/assets/map-mtc.png",
+          width: 64,
+          height: 64,
         }
       });
 
       const newYorkCityBallet = viewer.entities.add({
         position: Cesium.Cartesian3.fromDegrees(-73.98, 40.03),
         billboard: {
-          image: "/project-x/map-nycb.png",
+          image: "/project-x/assets/map-nycb.png",
+          width: 64,
+          height: 64,
         }
       });
 
       const royalAlbertHall = viewer.entities.add({
         position: Cesium.Cartesian3.fromDegrees(-0.182, 51.50),
         billboard: {
-          image: "/project-x/map-rah.png",
+          image: "/project-x/assets/map-rah.png",
+          width: 64,
+          height: 64,
         }
       });
 
