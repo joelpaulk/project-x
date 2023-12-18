@@ -1,10 +1,11 @@
 function hideProjectInformationPanel() {
     console.log("Hello Scripts");
-    var projectInfoPanel = document.querySelectorAll('.project-information-panel-container');
-    console.log(projectInfoPanel);
+    var projectInfoPanel = document.querySelectorAll('.project-information-panel');
+    projectInfoPanel[0].style.display = "none";
 
-    for (var i = 0; i < projectInfoPanel.length; i++) {
-        projectInfoPanel[i].style.display = "none";
+    var projectInfoPanelContainer = document.querySelectorAll('.project-information-panel-container');
+    for (var i = 0; i < projectInfoPanelContainer.length; i++) {
+        projectInfoPanelContainer[i].style.display = "none";
     }
 }
 

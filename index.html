@@ -120,8 +120,8 @@
         position: Cesium.Cartesian3.fromDegrees(144.96, -37.82),
         billboard: {
           image: "/project-x/assets/map-mtc.png",
-          width: 64,
-          height: 64,
+          width: 80,
+          height: 80,
         }
       });
 
@@ -129,8 +129,8 @@
         position: Cesium.Cartesian3.fromDegrees(-73.98, 40.03),
         billboard: {
           image: "/project-x/assets/map-nycb.png",
-          width: 64,
-          height: 64,
+          width: 80,
+          height: 80,
         }
       });
 
@@ -138,12 +138,16 @@
         position: Cesium.Cartesian3.fromDegrees(-0.182, 51.50),
         billboard: {
           image: "/project-x/assets/map-rah.png",
-          width: 64,
-          height: 64,
+          width: 80,
+          height: 80,
         }
       });
 
       function flyToRAH() {
+        var projectInfoPanelContainer = document.querySelectorAll('.project-information-panel-container');
+        projectInfoPanelContainer[0].style.display = "none";
+        projectInfoPanelContainer[1].style.display = "none";
+        projectInfoPanelContainer[2].style.display = "unset";
         viewer.camera.flyTo({
           destination: Cesium.Cartesian3.fromDegrees(-0.182, 51.50, 7000.0)
         });
@@ -151,6 +155,10 @@
       }
 
       function flyToNYCB() {
+        var projectInfoPanelContainer = document.querySelectorAll('.project-information-panel-container');
+        projectInfoPanelContainer[0].style.display = "none";
+        projectInfoPanelContainer[1].style.display = "unset";
+        projectInfoPanelContainer[2].style.display = "none";
         viewer.camera.flyTo({
           destination: Cesium.Cartesian3.fromDegrees(-73.98, 40.03, 7000.0)
         });
@@ -158,6 +166,10 @@
       }
 
       function flyToMTC() {
+        var projectInfoPanelContainer = document.querySelectorAll('.project-information-panel-container');
+        projectInfoPanelContainer[0].style.display = "unset";
+        projectInfoPanelContainer[1].style.display = "none";
+        projectInfoPanelContainer[2].style.display = "none";
         viewer.camera.flyTo({
           destination: Cesium.Cartesian3.fromDegrees(144.96, -37.82, 7000.0)
         });
@@ -172,6 +184,12 @@
       }
 
       function flyToAmerica() {
+        var projectInfoPanel = document.querySelectorAll('.project-information-panel');
+        projectInfoPanel[0].style.display = "unset";
+        var projectInfoPanelContainer = document.querySelectorAll('.project-information-panel-container');
+        projectInfoPanelContainer[0].style.display = "none";
+        projectInfoPanelContainer[1].style.display = "unset";
+        projectInfoPanelContainer[2].style.display = "none";
         viewer.camera.flyTo({
           destination: Cesium.Cartesian3.fromDegrees(-95.50, 35.78, 7000000.0)
         });
@@ -179,6 +197,11 @@
       }
 
       function flyToUK() {
+        var projectInfoPanel = document.querySelectorAll('.project-information-panel');
+        projectInfoPanel[0].style.display = "unset";
+        var projectInfoPanelContainer = document.querySelectorAll('.project-information-panel-container');
+        projectInfoPanelContainer[1].style.display = "none";
+        projectInfoPanelContainer[2].style.display = "unset";
         viewer.camera.flyTo({
           destination: Cesium.Cartesian3.fromDegrees(20.50, 44.78, 7000000.0)
         });
