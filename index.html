@@ -14,15 +14,20 @@
 </head>
 
 <body>
-  <section class="work-by-region">
+  <!-- Region Selector Section -->
+  <section class="work-by-region" aria-label="Region Selector">
     <div class="work-by-region-container">
-      <button class="button button--left btn-global"> Around The World </button>
-      <button class="button btn-america"> North America </button>
-      <button class="button button--right btn-uk"> United Kingdom </button>
+      <button class="button button--left btn-global" aria-label="View projects around the world"> Around The World </button>
+      <button class="button btn-america" aria-label="View projects in North America"> North America </button>
+      <button class="button button--right btn-uk" aria-label="View projects in the United Kingdom"> United Kingdom </button>
     </div>
   </section>
-  <section class="project-information-panel">
-    <div class="project-information-panel-container">
+
+  <!-- Project Information Panels -->
+  <section class="project-information-panel" aria-label="Project Information">
+
+    <!-- Panel for Melbourne Theatre Company -->
+    <div class="project-information-panel-container" aria-label="Project Information for Melbourne Theatre Company">
       <h3 class="project-information-panel__title">Melbourne Theatre Company</h3>
       <h1 class="project-information-panel__title">Creating Melbourne Theatre Company's Digital Stage</h1>
       <h5 class="project-information-panel__tag">UX Design</h5><h5 class="project-information-panel__tag">Tessitura Integration</h5><h5 class="project-information-panel__tag">Video Integration</h5>
@@ -32,8 +37,8 @@
       <a href="#"><img class="project-information-panel__switch switch-nycb" src="assets/map-nycb.png"></a>
       <a href="#"><img class="project-information-panel__switch switch-rah" src="assets/map-rah.png"></a>
     </div>
-
-    <div class="project-information-panel-container">
+    <!-- Panel for New York City Ballet -->
+    <div class="project-information-panel-container" aria-label="Project Information for New Yor City Ballet">
       <h3 class="project-information-panel__title">New York City Ballet</h3>
       <h1 class="project-information-panel__title">Reimagining the principles of classical dance with a roster of spectacular dancers and an unparalleled repertory.</h1>
       <h5 class="project-information-panel__tag">Digital Brand Development</h5><h5 class="project-information-panel__tag">CMS Development</h5><h5 class="project-information-panel__tag">Digital Strategy</h5>
@@ -43,8 +48,8 @@
       <a href="#"><img class="project-information-panel__switch switch-rah" src="assets/map-rah.png"></a>
       <a href="#"><img class="project-information-panel__switch switch-mtc" src="assets/map-mtc.png"></a>
     </div>
-
-    <div class="project-information-panel-container">
+    <!-- Panel for Royal Albert Hall -->
+    <div class="project-information-panel-container" aria-label="Project Information for Royal Albert Hall">
       <h3 class="project-information-panel__title">Royal Albert Hall</h3>
       <h1 class="project-information-panel__title">Restaurant Bookings</h1>
       <h5 class="project-information-panel__tag">UX Design</h5><h5 class="project-information-panel__tag">Tessitura Integration</h5><h5 class="project-information-panel__tag">Angular JS</h5>
@@ -55,6 +60,8 @@
       <a href="#"><img class="project-information-panel__switch switch-nycb" src="assets/map-nycb.png"></a>
     </div>
   </section>
+
+  <!-- Cesium Globe Cover -->
   <section class="cesium-globe-cover">
     <div id="cesiumContainer" class="fullSize"></div>
   </section>
