@@ -7,9 +7,7 @@
   <script src="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Cesium.js"></script>
   <link href="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
-  <style>
-    @import url(https://sandcastle.cesium.com/templates/bucket.css);
-  </style>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 
 <body>
@@ -135,7 +133,7 @@
       });
 
       const royalAlbertHall = viewer.entities.add({
-        position: Cesium.Cartesian3.fromDegrees(-0.182, 51.50),
+        position: Cesium.Cartesian3.fromDegrees(-0.18, 51.50),
         billboard: {
           image: "/project-x/assets/map-rah.png",
           width: 100,
@@ -150,7 +148,7 @@
         projectInfoPanelContainer[1].style.display = "none";
         projectInfoPanelContainer[2].style.display = "unset";
         viewer.camera.flyTo({
-          destination: Cesium.Cartesian3.fromDegrees(-0.182, 51.50, 7000.0)
+          destination: Cesium.Cartesian3.fromDegrees(-0.18, 51.50, 7000.0)
         });
         return dynamicRate = 0.0;
       }
