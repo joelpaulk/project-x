@@ -151,6 +151,24 @@
         }
       });
 
+      const mysticAquarium = viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(-71.95, 41.37),
+        billboard: {
+          image: "/project-x/assets/map-ma.png",
+          width: 100,
+          height: 100,
+        }
+      });
+
+      const losAngelesPhilharmoci = viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(-118.24, 34.05),
+        billboard: {
+          image: "/project-x/assets/map-lap.png",
+          width: 100,
+          height: 100,
+        }
+      });
+
       // Function to fly to Royal Albert Hall
       function flyToRAH() {
         console.log("Hit");
