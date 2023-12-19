@@ -8,6 +8,9 @@
   <link href="https://cesium.com/downloads/cesiumjs/releases/1.112/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <style>
+    @import url(https://sandcastle.cesium.com/templates/bucket.css);
+  </style>
 </head>
 
 <body>
@@ -56,18 +59,17 @@
     <div id="cesiumContainer" class="fullSize"></div>
   </section>
   <script type="module">
-    // Your access token can be found at: https://ion.cesium.com/tokens.
-    // This is the default access token from your ion account
-
+    // Setting up CesiumJS Globe and Project Interaction
+    
+    // Default Access Token for CesiumJS
     Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhOTRiZjk4My0xOGVmLTQ1NTctODA3Mi1hN2I3MmFkYmYzYWYiLCJpZCI6MTg0ODQ2LCJpYXQiOjE3MDI3ODA4MDd9.YIflQ_56PD-ztvOCikrMhA8iLfSR6hKAvvGTiPei0r8';
 
-    // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
-    //const viewer = new Cesium.Viewer('cesiumContainer');    
+    // Function to initialize Cesium Viewer    
     function startup(Cesium) {
       'use strict';
       var dynamicRate = 0.1;
 
-      //Set viewer options
+      // Viewer options setup
       var viewer = new Cesium.Viewer('cesiumContainer', {
         contextOptions: {
           webgl: {
@@ -89,7 +91,7 @@
         enableLighting: true
       });
 
-      //Remove Sun, Moon, Sky & Atmosphere
+      // Remove default elements (Sun, Moon, Sky, Atmosphere etc) for cleaner globe presentation
       viewer.scene.skyBox.destroy();
       viewer.scene.skyBox = undefined;
       viewer.scene.skyAtmosphere.destroy();
@@ -100,6 +102,7 @@
       viewer.scene.moon = undefined;
       viewer.scene.backgroundColor = new Cesium.Color(0, 0, 0, 0);
 
+      // Set initial camera view
       viewer.camera.setView({ destination: Cesium.Cartesian3.fromDegrees(0.0, 0.0, 19000000.0) });
 
       //Enable spin motion on the globe
@@ -141,6 +144,7 @@
         }
       });
 
+      // Function to fly to Royal Albert Hall
       function flyToRAH() {
         console.log("Hit");
         var projectInfoPanelContainer = document.querySelectorAll('.project-information-panel-container');
@@ -153,6 +157,7 @@
         return dynamicRate = 0.0;
       }
 
+      // Function to fly to New York City Ballet
       function flyToNYCB() {
         console.log("Hit");
         var projectInfoPanelContainer = document.querySelectorAll('.project-information-panel-container');
@@ -165,6 +170,7 @@
         return dynamicRate = 0.0;
       }
 
+      // Function to fly to Melbourne Theatre Company
       function flyToMTC() {
         console.log("Hit");
         var projectInfoPanelContainer = document.querySelectorAll('.project-information-panel-container');
@@ -177,6 +183,7 @@
         return dynamicRate = 0.0;
       }
 
+      // Function to enable spinning of the globe
       function spinGlobal() {
         viewer.camera.flyTo({
           destination: Cesium.Cartesian3.fromDegrees(0.0, 0.0, 15000000.0)
@@ -184,6 +191,7 @@
         return dynamicRate = 0.1;
       }
 
+      // Function to focus on America
       function flyToAmerica() {
         var projectInfoPanel = document.querySelectorAll('.project-information-panel');
         projectInfoPanel[0].style.display = "unset";
@@ -197,6 +205,7 @@
         return dynamicRate = 0.0;
       }
 
+      // Function to focus on the United Kingdom
       function flyToUK() {
         var projectInfoPanel = document.querySelectorAll('.project-information-panel');
         projectInfoPanel[0].style.display = "unset";
@@ -210,10 +219,13 @@
         return dynamicRate = 0.0;
       }
 
+      // Event listeners setup after window load
       window.onload = function () {
 
+        // Hide project information panels initially
         hideProjectInformationPanel();
 
+        // Setup event listeners for project switches
         var projectRAH = document.querySelectorAll('.switch-rah');
         var projectNYCB = document.querySelectorAll('.switch-nycb');
         var projectMTC = document.querySelectorAll('.switch-mtc');
@@ -222,6 +234,7 @@
         projectMTC[0].onclick = flyToMTC;
       
 
+        // Set up event listeners for region selectors
         var projectsGlobal = document.querySelectorAll('.btn-global');
         var projectsAmerica = document.querySelectorAll('.btn-america');
         var projectsUK = document.querySelectorAll('.btn-uk');
@@ -232,6 +245,7 @@
       }
     }
 
+    // Load CesiumJS
     if (typeof Cesium !== 'undefined') {
       startup(Cesium);
     } else if (typeof require === 'function') {
